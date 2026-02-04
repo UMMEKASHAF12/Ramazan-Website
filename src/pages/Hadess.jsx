@@ -1,12 +1,50 @@
 import React from "react";
 
-function Hadess() {
+const hadeesData = [
+  { roza: 1, arabic: "إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", urdu: "اعمال کا دارومدار نیتوں پر ہے" },
+  { roza: 2, arabic: "الصِّيَامُ جُنَّةٌ", urdu: "روزہ ڈھال ہے" },
+  { roza: 3, arabic: "لِلصَّائِمِ فَرْحَتَانِ", urdu: "روزہ دار کے لیے دو خوشیاں ہیں" },
+  { roza: 4, arabic: "مَنْ صَامَ رَمَضَانَ إِيمَانًا", urdu: "جو ایمان کے ساتھ رمضان کے روزے رکھے" },
+  { roza: 5, arabic: "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ", urdu: "تم میں بہترین وہ ہے جو قرآن سیکھے" }, { roza: 6, arabic: "الدُّعَاءُ هُوَ الْعِبَادَةُ", urdu: "دعا عبادت ہے" },
+  { roza: 7, arabic: "الرَّاحِمُونَ يَرْحَمُهُمُ اللَّهُ", urdu: "رحم کرنے والوں پر اللہ رحم کرتا ہے" },
+  { roza: 8, arabic: "أَفْضَلُ الصَّدَقَةِ فِي رَمَضَانَ", urdu: "رمضان میں صدقہ افضل ہے" },
+  { roza: 9, arabic: "مَنْ فَطَّرَ صَائِمًا", urdu: "جو روزہ دار کو افطار کرائے" },
+  { roza: 10, arabic: "الصَّبْرُ نِصْفُ الْإِيمَانِ", urdu: "صبر آدھا ایمان ہے" },
+  { roza: 11, arabic: "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ", urdu: "اللہ کو سب سے محبوب عمل" }, { roza: 12, arabic: "الطُّهُورُ شَطْرُ الْإِيمَانِ", urdu: "پاکیزگی آدھا ایمان ہے" }, { roza: 13, arabic: "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ صَدَقَةٌ", urdu: "مسکرانا بھی صدقہ ہے" }, { roza: 14, arabic: "اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ", urdu: "جہاں بھی ہو اللہ سے ڈرو" }, { roza: 15, arabic: "الدِّينُ النَّصِيحَةُ", urdu: "دین خیر خواہی ہے" }, { roza: 16, arabic: "مَنْ صَمَتَ نَجَا", urdu: "خاموشی نجات ہے" }, { roza: 17, arabic: "أَفْضَلُ الذِّكْرِ لَا إِلٰهَ إِلَّا اللَّهُ", urdu: "بہترین ذکر لا الٰہ الا اللہ ہے" }, { roza: 18, arabic: "خَيْرُ النَّاسِ أَنْفَعُهُمْ", urdu: "بہترین لوگ وہ ہیں جو فائدہ دیں" }, { roza: 19, arabic: "إِنَّ اللَّهَ جَمِيلٌ", urdu: "اللہ خوبصورت ہے" }, { roza: 20, arabic: "السَّخَاءُ مِنَ الْإِيمَانِ", urdu: "سخاوت ایمان کا حصہ ہے" }, { roza: 21, arabic: "تَحَرَّوْا لَيْلَةَ الْقَدْرِ", urdu: "لیلۃ القدر کو تلاش کرو" }, { roza: 22, arabic: "اللَّهُمَّ إِنَّكَ عَفُوٌّ", urdu: "اے اللہ! تو معاف کرنے والا ہے" }, { roza: 23, arabic: "الْعَفْوُ عِنْدَ الْقُدْرَةِ", urdu: "قدرت کے باوجود معاف کرنا" }, { roza: 24, arabic: "مَنْ تَوَاضَعَ لِلَّهِ", urdu: "جو اللہ کے لیے عاجزی کرے" }, { roza: 25, arabic: "حُسْنُ الْخُلُقِ", urdu: "اچھا اخلاق" }, { roza: 26, arabic: "الصَّدْقُ يَهْدِي إِلَى الْبِرِّ", urdu: "سچ نیکی کی طرف لے جاتا ہے" }, { roza: 27, arabic: "لَيْلَةُ الْقَدْرِ خَيْرٌ", urdu: "لیلۃ القدر ہزار مہینوں سے بہتر ہے" }, { roza: 28, arabic: "مَنْ غَشَّ فَلَيْسَ مِنَّا", urdu: "دھوکہ دینے والا ہم میں سے نہیں" }, { roza: 29, arabic: "الْيَدُ الْعُلْيَا خَيْرٌ", urdu: "اوپر والا ہاتھ بہتر ہے" }, { roza: 30, arabic: "إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ", urdu: "اللہ گناہ معاف فرماتا ہے" },];
+
+
+const Hadith = () => {
   return (
-    <div>
-      <h1>Hadess Page</h1>
-      <p>Yahan daily hadess show honge.</p>
+    <div className="min-h-screen bg-gray-100 pt-24 px-4">
+      <h1 className="text-center text-3xl font-bold text-green-700 mb-8">
+       Daily Hadees
+      </h1>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {hadeesData.map((item) => (
+          <div
+            key={item.roza}
+            className="bg-white p-6 rounded-xl shadow"
+          >
+            <h2 className="text-green-700 font-bold mb-2">
+              Roza #{item.roza}
+            </h2>
+
+            <p className="text-right text-lg font-serif mb-3">
+              {item.arabic}
+            </p>
+
+            <p className="text-gray-700 text-sm">
+              {item.urdu}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
 
-export default Hadess;
+export default Hadith;
+
+
+

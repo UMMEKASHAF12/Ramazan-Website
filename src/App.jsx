@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import SehriIftari from "./pages/SehriIftari";
 import Hadess from "./pages/Hadess";
-import Home from "./pages/Home"; // agar ek home page hai
+import Home from "./pages/Home"; 
+import RamazanDays from "./pages/RamazanDays.jsx";
+
 
 import "./App.css";
 
@@ -16,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sehri-iftari" element={<SehriIftari />} />
           <Route path="/hadess" element={<Hadess />} />
+          <Route path ="/ramazan-days" element={<RamazanDays />} />
         </Routes>
       </div>
     </Router>

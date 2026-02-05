@@ -88,7 +88,7 @@ const Home = () => {
 
       {/* Quick Links */}
       <div className="flex justify-center gap-4">
-        <Link to="/hadees" className="bg-green-700 text-white px-4 py-2 rounded">
+        <Link to="/hadess" className="bg-green-700 text-white px-4 py-2 rounded">
           View All Hadees
         </Link>
         <Link to="/sehri-iftari" className="bg-gray-700 text-white px-4 py-2 rounded">
